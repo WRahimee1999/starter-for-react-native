@@ -11,6 +11,7 @@ import { IconChevronUp } from "@/assets/images/IconChevronUp";
 import { Log } from "@/types/log";
 import { Pill } from "@/components/Pill";
 import { Code } from "@/components/Code";
+import React from "react";
 
 interface LogsProps {
   toggleBottomSheet: () => void;
@@ -52,16 +53,12 @@ export const Logs = ({ toggleBottomSheet, isOpen, logs }: LogsProps) => {
       <ScrollView horizontal style={styles.horizontalScroll}>
         <View>
           <View style={{ ...styles.tableRow, ...styles.logTitle }}>
-            <Text style={{ flexGrow: 1 }}>Date</Text>
-            <Text style={styles.tableCell}>Status</Text>
-            <Text style={styles.tableCell}>Method</Text>
-            <Text style={styles.tableCell}>Path</Text>
             <Text style={styles.tableCellResponse}>Response</Text>
           </View>
           {logs.map((log, index) => {
             return (
               <View key={index} style={styles.tableRow}>
-                <Text style={{ flexGrow: 1 }}>{formatDate(log.date)}</Text>
+                {/* <Text style={{ flexGrow: 1 }}>{formatDate(log.date)}</Text> */}
                 <View style={styles.tableCell}>
                   <View style={{ flexDirection: "row" }}>
                     <Pill
@@ -70,7 +67,7 @@ export const Logs = ({ toggleBottomSheet, isOpen, logs }: LogsProps) => {
                     />
                   </View>
                 </View>
-                <Text style={styles.tableCell}>{log.method}</Text>
+                {/* <Text style={styles.tableCell}>{log.method}</Text> */}
                 <Text style={styles.tableCell}>{log.path}</Text>
                 <View style={styles.tableCellResponse}>
                   <Code variant={"primary"}>

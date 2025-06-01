@@ -17,6 +17,7 @@ import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { Log } from "@/types/log";
 import { AppwriteException, Client } from "appwrite";
+import React from "react";
 
 const client = new Client()
   .setProject(process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID ?? "")
